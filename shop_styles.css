@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "Istok";
+    src: url("./resources/fonts/Istok_Web/IstokWeb-Regular.ttf");
+}
+
+
+.table {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item_card {
+    width: 420px;
+    height: 500px;
+
+    margin: 32px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #FFDCC1;
+}
+
+.item_image {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 360px;
+}
+
+.item_label {
+
+}
+
