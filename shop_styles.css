@@ -60,6 +60,10 @@
     height: auto;
 }
 
+.item_label {
+    width: 360px;
+}
+
 .item_name {
     margin: 0;
 

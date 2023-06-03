@@ -1,0 +1,35 @@
+{
+    "author": "Maksim Alpatskii",
+    "items": [
+        {
+            "id": 0,
+            "name": "NASA T-shirt",
+            "price": 30,
+            "imgSrc": "resources/images/nasa_tshirt.png"
+        },
+        {
+            "id": 1,
+            "name": "Office Cup",
+            "price": 30,
+            "imgSrc": "resources/images/office_cup.png"
+        },
+        {
+            "id": 2,
+            "name": "Star Wars Hoodie",
+            "price": 30,
+            "imgSrc": "resources/images/star_wars_hoodie.png"
+        },
+        {
+            "id": 3,
+            "name": "NASA Sweater",
+            "price": 30,
+            "imgSrc": "resources/images/sweater.png"
+        },
+        {
+            "id": 4,
+            "name": "Tyler The Creator Poster",
+            "price": 30,
+            "imgSrc": "resources/images/tyler_the_creator_poster.png"
+        }
+    ]
+}

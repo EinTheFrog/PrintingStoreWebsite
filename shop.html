@@ -6,82 +6,10 @@
         <title>Printing store website</title>
         <link rel="stylesheet" href="shop_styles.css"/>
     </head>
-    <body>
-        <div class="table">
-            <div class="item_container">
-                <div class="item_card">
-                    <img class="item_image" src="resources/images/nasa_tshirt.png" />
-                    <p class="item_name">
-                        NASA t-shirt
-                    </p>
-                    <p class="item_price">
-                        30.00 AED
-                    </p>
-                </div>
-                <div class="item_effect">
-
-                </div>
-            </div>
-            
-            <div class="item_container">
-                <div class="item_card">
-                    <img class="item_image" src="resources/images/nasa_tshirt.png" />
-                    <p class="item_name">
-                        NASA t-shirt
-                    </p>
-                    <p class="item_price">
-                        30.00 AED
-                    </p>
-                </div>
-                <div class="item_effect">
-                    
-                </div>
-            </div>
-
-            <div class="item_container">
-                <div class="item_card">
-                    <img class="item_image" src="resources/images/nasa_tshirt.png" />
-                    <p class="item_name">
-                        NASA t-shirt
-                    </p>
-                    <p class="item_price">
-                        30.00 AED
-                    </p>
-                </div>
-                <div class="item_effect">
-                    
-                </div>
-            </div>
-
-           <div class="item_container">
-                <div class="item_card">
-                    <img class="item_image" src="resources/images/nasa_tshirt.png" />
-                    <p class="item_name">
-                        NASA t-shirt
-                    </p>
-                    <p class="item_price">
-                        30.00 AED
-                    </p>
-                </div>
-                <div class="item_effect">
-                    
-                </div>
-            </div>
-
-            <div class="item_container">
-                <div class="item_card">
-                    <img class="item_image" src="resources/images/nasa_tshirt.png" />
-                    <p class="item_name">
-                        NASA t-shirt
-                    </p>
-                    <p class="item_price">
-                        30.00 AED
-                    </p>
-                </div>
-                <div class="item_effect">
-                    
-                </div>
-            </div>
+    <body onload="loadData();">
+        <script src="./scripts/shop.js" defer>
+        </script>
+        <div id="items_table" class="table">
         </div>
     </body>
 </html>
