@@ -1,0 +1,95 @@
+*{
+	text-decoration:none;
+}
+
+.navbar{
+	background:#FFE98A;font-family:Calibri;padding-right:10px;padding-left:10px;
+	margin: 0;
+}
+
+.navdiv {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 85px;
+	
+}
+
+ ul{
+	color: #280B45;
+
+}
+
+.logo a {
+	 font-size:35px;font-weight:600;color:white;
+}
+li {
+	list-style:none; display:inline-block
+}
+li a {
+	color:white;font-size:18px;font-weight:bold;margin-right:25px;
+	}
+
+body {
+	margin: 0;
+	background: radial-gradient(68.47% 135.41% at 102.71% 100%, #E072EA 0%, #F49393 63.2%, #FFB779 100%);
+}
+h1 {
+	text-align: center;
+	font-family: Habibi;
+	font-size:75px;
+}
+.format {
+	font-family: Habibi;
+	font-size: 75px;
+	color: #280B45;
+}
+.Button {
+	border-radius: 4px;
+	background-color: #FFE98A;
+	border: none;
+	color: #280B45;
+	text-align: center;
+	font-size: 25px;
+	padding: 5px;
+	width: 150px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+	margin-left: 200px;
+	font-family: Istok Web;
+	position:relative;
+	bottom:100px;
+}
+
+.Button span {
+   cursor: pointer;
+   display: inline-block;
+   position: relative;
+  transition: 0.5s;
+}
+
+.Button span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+
+.Button:hover span {
+	padding-right: 25px;
+}
+
+.Button:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+.tab {
+	color: #280B45;
+}
+
+
