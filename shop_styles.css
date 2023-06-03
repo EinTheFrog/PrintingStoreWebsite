@@ -1,0 +1,90 @@
+@font-face {
+    font-family: "Istok";
+    src: url("./resources/fonts/Istok_Web/IstokWeb-Regular.ttf");
+}
+
+
+.table {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 36px;
+}
+
+.item_container {
+    padding-top: 36px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+
+    margin: 18px;
+
+    display: grid;
+}
+
+.item_card {
+    width: 420px;
+    height: 100%;
+
+    padding-top: 36px;
+    border-radius: 10px;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #FFDCC1;
+    box-shadow: 0px 4px 4px #888888;
+}
+
+.item_effect {
+    width: 420px;
+    height: 100%;
+
+    padding-top: 36px;
+    border-radius: 10px;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    background-color: transparent;
+}
+
+.item_image {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+
+    width: 360px;
+    height: auto;
+}
+
+.item_label {
+    width: 360px;
+}
+
+.item_name {
+    margin: 0;
+
+    font-family: "Istok";
+    font-size: 36px;
+    color: #280B45;
+}
+
+.item_price {
+    margin: 0;
+
+    font-family: "Istok";
+    font-size: 24px;
+    color: #280B45;
+}
+
+.item_effect:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.item_effect:active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
