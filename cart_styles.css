@@ -1,0 +1,132 @@
+@font-face {
+    font-family: "Istok";
+    src: url("./resources/fonts/Istok_Web/IstokWeb-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Habibi";
+    src: url("./resources/fonts/Habibi/Habibi-Regular.ttf");
+}
+
+body {
+    padding-left: 40px;
+}
+
+select {
+    padding-left: 10px;
+    padding-right: 5px;
+    border-style: none;
+    border-radius: 5px;
+    font-family: "Istok";
+    font-size: 24px;
+    color: #280B45;
+    background-color: #DBB8FF;
+}
+
+option {
+    border-style: none;
+    font-family: "Istok";
+    font-size: 24px;
+    color: #280B45;
+    background-color: #DBB8FF;
+}
+
+h1 {
+	font-family: Habibi;
+	font-size: 48px;
+    color: #280B45;
+}
+
+.list {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.item_card {
+    width: 1000px;
+    height: 100%;
+
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    display: flex;
+
+    background-color: #FFDCC1;
+    box-shadow: 0px 4px 4px #888888;
+}
+
+.item_image {
+    width: 120px;
+    height: auto;
+
+    border-radius: 5px;
+}
+
+.item_label {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 60px;
+}
+
+.item_name {
+    margin: 0;
+
+    font-family: "Istok";
+    font-size: 36px;
+    color: #280B45;
+}
+
+.item_quantity {
+    margin: 0;
+
+    font-family: "Istok";
+    font-size: 24px;
+    color: #280B45;
+}
+
+.price {
+    margin: 0;
+
+    font-family: "Istok";
+    font-size: 36px;
+    color: #280B45;
+}
+
+.bottom_row {
+    width: 1040px;
+
+    display: flex;
+}
+
+.pay_button {
+    margin-left: auto;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+
+    font-family: "Istok";
+    font-size: 36px;
+    color: #280B45;
+
+    border-style: none;
+    border-radius: 20px;
+
+    background-color: #FFE98A;
+    box-shadow: 0px 2px 4px #888888;
+}
+
+.pay_button:hover {
+    background-color: #f5e082;
+}
+
+
+.pay_button:active {
+    background-color: #e0ce79;
+}
