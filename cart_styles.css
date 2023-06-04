@@ -8,8 +8,8 @@
     src: url("./resources/fonts/Habibi/Habibi-Regular.ttf");
 }
 
-body {
-    padding-left: 40px;
+html, body {
+    margin: 0px;
 }
 
 select {
@@ -31,14 +31,48 @@ option {
     background-color: #DBB8FF;
 }
 
+li {
+	list-style: none; 
+    display: inline-block;
+}
+
+li a {
+	color: #280B45;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
+    text-decoration: none;
+}
+
 h1 {
+    padding-left: 40px;
 	font-family: Habibi;
 	font-size: 48px;
     color: #280B45;
 }
 
-.list {
+hr {
+    max-width: 1040px;
+    margin-left: 40px;
+}
 
+.navbar{
+	background: #FFE98A;
+    font-family: Calibri;
+    padding-right: 10px;
+    padding-left: 10px;
+	margin: 0;
+}
+
+.navdiv {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 85px;
+}
+
+.list {
+    padding-left: 40px;
     display: flex;
     flex-direction: column;
 }
@@ -99,6 +133,7 @@ h1 {
 }
 
 .bottom_row {
+    padding-left: 40px;
     width: 1040px;
 
     display: flex;
