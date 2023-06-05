@@ -1,0 +1,79 @@
+@font-face {
+    font-family: "Istok";
+    src: url("./resources/fonts/Istok_Web/IstokWeb-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Habibi";
+    src: url("./resources/fonts/Habibi/Habibi-Regular.ttf");
+}
+
+html, body {
+    margin: 0px;
+}
+
+li {
+	list-style: none; 
+    display: inline-block;
+}
+
+li a {
+	color: #280B45;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
+    text-decoration: none;
+}
+
+h1 {
+	font-family: Habibi;
+	font-size: 48px;
+    color: #280B45;
+}
+
+p {
+    margin: 0;
+    margin-top: 40px;
+
+    font-family: "Istok";
+    font-size: 24px;
+    color: #280B45;
+}
+
+.navbar{
+	background: #FFE98A;
+    font-family: Calibri;
+    padding-right: 10px;
+    padding-left: 10px;
+	margin: 0;
+}
+
+.navdiv {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 85px;
+}
+
+.container {
+    padding: 70px;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.avatar {
+    width: auto;
+    height: 340px;
+
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
