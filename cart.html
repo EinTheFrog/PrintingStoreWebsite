@@ -4,10 +4,10 @@
     <head>
         <meta charset="utf-8" />
         <title>Printing store website</title>
-        <link rel="stylesheet" href="shop_styles.css"/>
+        <link rel="stylesheet" href="cart_styles.css"/>
     </head>
-    <body onload="loadData();">
-        <script src="./scripts/shop.js" defer>
+    <body onload="loadData()">
+        <script src="./scripts/cart.js" defer>
         </script>
         <nav class="navbar">
             <div class="navdiv">
@@ -19,10 +19,19 @@
                     <li><a class="tab" href="./cart.html">Cart |</a></li>
                     <li><a class="tab" href="#">Login |</a></li>
                     <li><a class="tab" href="#">Sign up </a></li>
-                </ul>
             </div>
         </nav>
-        <div id="items_table" class="table">
+        <h1>
+            Your cart
+        </h1>
+        <div id="items_list" class="list">
+        </div>
+        <hr />
+        <div class="bottom_row">
+            <p id="total_price" class="price">
+                Total: 400.00 AED
+            </p>
+            <button class="pay_button">Pay online</button>
         </div>
     </body>
 </html>

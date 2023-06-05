@@ -1,0 +1,26 @@
+{
+    "author": "Maksim Alpatskii",
+    "items": [
+        {
+            "id": 0,
+            "name": "NASA T-shirt",
+            "price": 30,
+            "imgSrc": "resources/images/nasa_tshirt.png",
+            "quantity": 3
+        },
+        {
+            "id": 1,
+            "name": "Office Cup",
+            "price": 10,
+            "imgSrc": "resources/images/office_cup.png",
+            "quantity": 1
+        },
+        {
+            "id": 4,
+            "name": "Tyler The Creator Poster",
+            "price": 22,
+            "imgSrc": "resources/images/tyler_the_creator_poster.png",
+            "quantity": 1
+        }
+    ]
+}

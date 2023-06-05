@@ -10,25 +10,25 @@
         {
             "id": 1,
             "name": "Office Cup",
-            "price": 30,
+            "price": 10,
             "imgSrc": "resources/images/office_cup.png"
         },
         {
             "id": 2,
             "name": "Star Wars Hoodie",
-            "price": 30,
+            "price": 50,
             "imgSrc": "resources/images/star_wars_hoodie.png"
         },
         {
             "id": 3,
             "name": "NASA Sweater",
-            "price": 30,
+            "price": 99,
             "imgSrc": "resources/images/sweater.png"
         },
         {
             "id": 4,
             "name": "Tyler The Creator Poster",
-            "price": 30,
+            "price": 22,
             "imgSrc": "resources/images/tyler_the_creator_poster.png"
         }
     ]
