@@ -6,8 +6,8 @@
         <title>Printing store website</title>
         <link rel="stylesheet" href="cart_styles.css"/>
     </head>
-    <body">
-        <script src="./scripts/shop.js" defer>
+    <body onload="loadData()">
+        <script src="./scripts/cart.js" defer>
         </script>
         <nav class="navbar">
             <div class="navdiv">
@@ -25,65 +25,11 @@
         <h1>
             Your cart
         </h1>
-        <div id="items_table" class="list">
-            <div class="item_card"> 
-                <img class="item_image" src="./resources/images/nasa_tshirt.png" />
-                <div class="item_label">
-                    <p class="item_name">
-                        NASA T-shirt
-                    </p>
-                    <p class="item_quantity">
-                        Quantity: &nbsp;
-                        <select>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </p>
-                </div>
-             </div>
-             <div class="item_card"> 
-                <img class="item_image" src="./resources/images/nasa_tshirt.png" />
-                <div class="item_label">
-                    <p class="item_name">
-                        NASA T-shirt
-                    </p>
-                    <p class="item_quantity">
-                        Quantity: &nbsp;
-                        <select>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </p>
-                </div>
-             </div>
-             <div class="item_card"> 
-                <img class="item_image" src="./resources/images/nasa_tshirt.png" />
-                <div class="item_label">
-                    <p class="item_name">
-                        NASA T-shirt
-                    </p>
-                    <p class="item_quantity">
-                        Quantity: &nbsp;
-                        <select>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </p>
-                </div>
-             </div>
+        <div id="items_list" class="list">
         </div>
         <hr />
         <div class="bottom_row">
-            <p class="price">
+            <p id="total_price" class="price">
                 Total: 400.00 AED
             </p>
             <button class="pay_button">Pay online</button>
