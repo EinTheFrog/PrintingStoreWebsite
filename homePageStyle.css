@@ -2,6 +2,11 @@
 	text-decoration:none;
 }
 
+html{
+	height:100%
+	width:100%
+}/*only added to fix gradient*/
+
 .navbar{
 	background:#FFE98A;font-family:Calibri;padding-right:10px;padding-left:10px;
 	margin: 0;
