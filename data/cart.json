@@ -11,14 +11,14 @@
         {
             "id": 1,
             "name": "Office Cup",
-            "price": 30,
+            "price": 10,
             "imgSrc": "resources/images/office_cup.png",
             "quantity": 1
         },
         {
             "id": 4,
             "name": "Tyler The Creator Poster",
-            "price": 30,
+            "price": 22,
             "imgSrc": "resources/images/tyler_the_creator_poster.png",
             "quantity": 1
         }
