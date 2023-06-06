@@ -1,16 +1,17 @@
+@font-face {
+    font-family: "Istok";
+    src: url("./resources/fonts/Istok_Web/IstokWeb-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Habibi";
+    src: url("./resources/fonts/Habibi/Habibi-Regular.ttf");
+}
+
 *{
 	text-decoration:none;
 }
 
-body {
-	margin: 0;
-	background: radial-gradient(68.47% 135.41% at 102.71% 100%, #E072EA 0%, #F49393 63.2%, #FFB779 100%);
-}
-h1 {
-	text-align: center;
-	font-family: Habibi;
-	font-size:75px;
-}
 .format {
 	font-family: Habibi;
 	font-size: 75px;
@@ -27,18 +28,15 @@ h1 {
 	width: 150px;
 	transition: all 0.5s;
 	cursor: pointer;
-	margin: 5px;
-	margin-left: 200px;
 	font-family: Istok Web;
 	position:relative;
-	bottom:100px;
 }
 
 .Button span {
    cursor: pointer;
    display: inline-block;
    position: relative;
-  transition: 0.5s;
+   transition: 0.5s;
 }
 
 .Button span:after {
@@ -60,8 +58,21 @@ h1 {
 	right: 0;
 }
 
-.tab {
-	color: #280B45;
+.container {
+	position: absolute;
+
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+
+	background: radial-gradient(ellipse at 100% 100%, #E072EA 0%, #F49393 63.2%, #FFB779 100%);
+}
+
+.centr_content {
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 
