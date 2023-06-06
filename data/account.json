@@ -1,0 +1,29 @@
+{
+    "author": "Maksim Alpatskii",
+    "account": {
+        "email": "tylerbaudelaire@gmail.com",
+        "name": "Baudelaire, Tyler",
+        "phoneNumber": "+1 (855) 4444-8888",
+        "addres": "Hawthorne, CA",
+        "dateOfBirth": "Mar 06, 1991",
+        "avatarSrc": "./resources/images/avatar.png",
+        "orders": [
+            {
+                "id": 1,
+                "name": "Office Cup",
+                "price": 10,
+                "imgSrc": "resources/images/office_cup.png",
+                "quantity": 1,
+                "date": "March 28, 2023"
+            },
+            {
+                "id": 4,
+                "name": "Tyler The Creator Poster",
+                "price": 22,
+                "imgSrc": "resources/images/tyler_the_creator_poster.png",
+                "quantity": 9,
+                "date": "June 01, 2023"
+            }
+        ]
+    }
+}
