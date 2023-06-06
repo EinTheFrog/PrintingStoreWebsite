@@ -5,21 +5,15 @@
         <meta charset="utf-8" />
         <title>Printing store website</title>
         <link rel="stylesheet" href="account_styles.css"/>
+        <link rel="stylesheet" href="top_bar_style.css"/>
     </head>
-    <body onload="loadData()">
-        <script src="./scripts/cart.js" defer>
+    <body onload="loadData(); loadTopBar();">
+        <script src="./scripts/account.js" defer>
         </script>
-        <nav class="navbar">
-            <div class="navdiv">
-                <div class="logo"><img src="companyLogo.jpeg" alt="our company logo" width="100" height="85"></div>
-                <ul>
-                    <li><a class="tab" href="./HomePage.html">Home | </a></li>
-                    <li><a class="tab"  href="./shop.html">Shop | </a></li>
-                    <li><a class="tab" href="#">Account | </a></li>
-                    <li><a class="tab" href="./cart.html">Cart | </a></li>
-                    <li><a class="tab" href="#">Login | </a></li>
-                    <li><a class="tab" href="#">Sign up </a></li>
-            </div>
+        <script src="./scripts/top_bar.js" defer>
+        </script>
+        <nav id="navbar" class="navbar">
+            
         </nav>
         <div class="container">
             <h1>
@@ -27,16 +21,21 @@
             </h1>
             <div class="row">
                 <div class="column">
-                    <p>E-mail: tylerbaudelaire@gmail.com</p>
-                    <p>Name: Baudelaire, Tyler</p>
-                    <p>Phone number: +1 (855) 4444-8888</p>
-                    <p>Address: Hawthorne, CA</p>
-                    <p>Date of birth: Mar 06, 1991</p>
+                    <p id="email"></p>
+                    <p id="name"></p>
+                    <p id="phoneNumber"></p>
+                    <p id="address"></p>
+                    <p id="dateOfBirth"></p>
                 </div>
                 <div class="column">
-                    <img class="avatar" src="./resources/images/avatar.png" />
+                    <img id="avatar" class="avatar" />
                 </div>
-            </row>
+            </div>
+            <h1>
+                Past orders
+            </h1>
+            <div id="orders_list" class="list">
+            </div>
         </div>
     </body>
 </html>

@@ -8,23 +8,6 @@
     src: url("./resources/fonts/Habibi/Habibi-Regular.ttf");
 }
 
-html, body {
-    margin: 0px;
-}
-
-li {
-	list-style: none; 
-    display: inline-block;
-}
-
-li a {
-	color: #280B45;
-    font-size: 18px;
-    font-weight: bold;
-    margin-right: 25px;
-    text-decoration: none;
-}
-
 h1 {
 	font-family: Habibi;
 	font-size: 48px;
@@ -38,21 +21,6 @@ p {
     font-family: "Istok";
     font-size: 24px;
     color: #280B45;
-}
-
-.navbar{
-	background: #FFE98A;
-    font-family: Calibri;
-    padding-right: 10px;
-    padding-left: 10px;
-	margin: 0;
-}
-
-.navdiv {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 85px;
 }
 
 .container {
@@ -76,4 +44,64 @@ p {
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.item_card {
+    width: 1000px;
+    height: 100%;
+
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    display: flex;
+
+    background-color: #FFDCC1;
+    box-shadow: 0px 4px 4px #888888;
+}
+
+.item_image {
+    width: 120px;
+    height: auto;
+
+    border-radius: 5px;
+}
+
+.item_label {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 60px;
+}
+
+.item_name {
+    margin: 0;
+
+    font-family: "Istok";
+    font-size: 36px;
+    color: #280B45;
+}
+
+.item_quantity {
+    margin: 0;
+
+    font-family: "Istok";
+    font-size: 24px;
+    color: #280B45;
+}
+
+.order_date {
+    margin: 0;
+
+    font-family: "Istok";
+    font-size: 24px;
+    color: #280B45;
 }

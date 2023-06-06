@@ -2,39 +2,6 @@
 	text-decoration:none;
 }
 
-html{
-	height:100%
-	width:100%
-}/*only added to fix gradient*/
-
-.navbar{
-	background:#FFE98A;font-family:Calibri;padding-right:10px;padding-left:10px;
-	margin: 0;
-}
-
-.navdiv {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 85px;
-	
-}
-
- ul{
-	color: #280B45;
-
-}
-
-.logo a {
-	 font-size:35px;font-weight:600;color:white;
-}
-li {
-	list-style:none; display:inline-block
-}
-li a {
-	color:white;font-size:18px;font-weight:bold;margin-right:25px;
-	}
-
 body {
 	margin: 0;
 	background: radial-gradient(68.47% 135.41% at 102.71% 100%, #E072EA 0%, #F49393 63.2%, #FFB779 100%);
