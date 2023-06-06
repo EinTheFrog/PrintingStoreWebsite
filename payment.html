@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="payment_styles.css">
+  </head>
+  <body>
+   <div class="container">
+    <form class = "form" action="/HomePage.html">
+         <div class="inputBox1">
+           <p>Card number</p>
+           <input type="text" placeholder="**** **** **** ****" name="creditCardNum" size="20" title="XXXX XXXX XXXX XXXX" pattern="\d{4} \d{4} \d{4} \d{4}" required><br>
+         </div>
+         <div class="inputBox2">
+           <p>Card holder</p>
+           <input type="text" placeholder="Your name" name="cardholder" size="20" title="XXXX XXXX XXXX XXXX" required><br>
+         </div>
+         <div class="row">
+           <div class="inputBox3">
+             <p>CVV</p>
+             <input type="password" placeholder="***"  name="cvv" size="10" title="XXXX XXXX XXXX XXXX" pattern="\d{3}" required>
+           </div>
+           <div class="inputBox4">
+             <p>Expiry date</p>
+             <input type="text" placeholder="12/34" name="year" size="10" title="YYYY" pattern="(0[1-9]|1[0-2])/(2[3-9]|3[0-9])" required><br>
+           </div>
+         </div>
+         <div class="payment_container">
+          <p>Payment methods:</p>
+          <div class="row">
+            <div class="column">
+              <img class='payment_methods' src="./resources/images/paypal.png" alt="paypal">
+            </div>
+            <div class="column">
+              <img class='payment_methods' src="./resources/images/mastercard.png" alt="mastercard">
+            </div>
+            <div class="column">
+              <img class='payment_methods' src="./resources/images/cash.png" alt="cash">
+            </div>
+          </div>
+         </div>
+          <button class="form_button"><p>Pay now</p></button>
+          <div class="cancel_container">
+            <a class="cancel_link" href="HomePage.html">Cancel</a>
+          </div>
+    </form> 
+   </div>
+
+  </body>
+</html>
