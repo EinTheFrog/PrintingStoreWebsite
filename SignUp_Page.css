@@ -1,15 +1,21 @@
-﻿body {
+﻿@font-face {
+    font-family: "Istok";
+    src: url("./resources/fonts/Istok_Web/IstokWeb-Regular.ttf");
+}
+
+body {
     background: radial-gradient(68.47% 135.41% at 102.71% 100%, #E072EA 0%, #F49393 63.2%, #FFB779 100%);
-    font-family: Habibi;
+    font-family: "Istok";
 }
 .sign {
     width:360px;
-    height:620px;
+    height:100%;
     margin:auto;
-    background-color:mediumslateblue;
-    border-radius:3px;
+    background-color:#DBB8FF;
+    border-radius:10px;
 }
 h1 {
+    font-family: "Habibi";
     text-align:center;
     padding-top:15px;
 }
@@ -26,19 +32,25 @@ form input {
     width:100%;
     padding:7px;
     border:none;
-    border: 1px solid gray;
+    border: 1px solid white;
     border-radius:6px;
     outline:none;
 }
 
-input[type="button"] {
+input[type="submit"] {
     width:320px;
     height:35px;
     border:none;
     margin-top:20px;
-    background-color:lightgreen;
+    background-color:#5A3384;
     color:white;
     font-size:19px;
+}
+input[type="submit"]:hover {
+    background-color: #573080;
+}
+input[type="submit"]:active {
+    background-color: #48296a;
 }
 p {
     text-align:center;
@@ -56,7 +68,7 @@ p {
     top:3px;
 }
 .p2 a {
-    color:lightgreen;
+    color:#5A3384;
 }
 footer {
     padding: 0;
@@ -66,7 +78,7 @@ footer {
 }
 .footerContainer{
     width:100%;
-    padding: 70px 30px 20px;
+    padding-top: 30px;
 }
 .icons{
     display:flex;
@@ -93,40 +105,30 @@ footer {
     transition:0.5s;
 }
 .nav {
-    margin:30px 0;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
 
-}
-.nav ul{
-    display:flex;
-    justify-content:center;
-}
-.nav ul li a{
+.nav a{
     color:white;
     margin:20px;
     text-decoration:none;
     font-size:1.3em;
     opacity:0.7;
     transition:0.5s;
-
 }
-.nav ul li::before {
 
-    content: "\2022";
-    color: #111;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
- }
-.nav ul li a:hover{
-    opacity:1;
-
+.nav a:hover{
+    opacity: 0.9;
 }
+
 .bottom{
     background-color:#000;
     padding:20px;
     text-align:center;
 }
+
 .bottom p{
     color:white;
 }

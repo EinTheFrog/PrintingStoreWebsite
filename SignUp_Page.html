@@ -3,6 +3,7 @@
 <html >
 <head>
     <link href='https://fonts.googleapis.com/css?family=Habibi' rel='stylesheet'>
+    <link rel="stylesheet" href="top_bar_style.css">
     <link rel="stylesheet" href="SignUp_Page.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -16,10 +17,10 @@
             var password = document.getElementById("password").value;
             var confirmPassword = document.getElementById("ConfirmPassword").value;
 
-            var namePattern = /^[a-zA-Z\s]{1,20}$/;
-            var middleNamePattern = /^[a-zA-Z]{1,20}$/;
-            var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            var passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+            var namePattern = "/^[a-zA-Z\s]{1,}$/";
+            var middleNamePattern = "/^[a-zA-Z]{1,20}$/";
+            var emailPattern = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
+            var passwordPattern = "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/";
 
             if (!namePattern.test(firstName)) {
                 alert("First Name is invalid.");
@@ -56,39 +57,27 @@
 
     </script>
 </head>
-<body>
-    <!--<div class="navdiv">
-        <div class="logo"><img src="companyLogo.jpeg" alt="our company logo" width="100" height="85"></div>
-        <ul>
-            <li><a class="tab" href="./HomePage.html">Home</a></li>
-            <li><a>|</a></li>
-            <li><a class="tab" href="./shop.html">Shop</a></li>
-            <li><a>|</a></li>
-            <li><a class="tab" href="./account.html">Account</a></li>
-            <li><a>|</a></li>
-            <li><a class="tab" href="./cart.html">Cart</a></li>
-            <li><a>|</a></li>
-            <li><a class="tab" href="#">Login</a></li>
-            <li><a>|</a></li>
-            <li><a class="tab" href="#">Sign up </a></li>
-        </ul>
-    </div>-->
+<body onload="loadTopBar()">
+    <script src="./scripts/top_bar.js" defer>
+    </script>
+    <div id="navbar" class="navbar">
+    </div>
     <div class="sign">
         <h1>Join us</h1>
-        <form action="/action_page.php" method="get">
+        <form action="/HomePage.html" method="GET">
             <label>First Name</label>
-            <input id="FirstName" type="text" pattern="/^[a-zA-Z\s]{1,20}$/" required>
+            <input id="FirstName" type="text" pattern="^[a-zA-Z\s]{1,20}$" required>
             <label>Middle Name</label>
             <input id="MiddleName" type="text" pattern="^[a-zA-Z]{1,20}$" required>
             <label>Last Name</label>
             <input id="LastName" type="text" pattern="^[a-zA-Z]{1,20}$" required>
             <label> Email</label>
-            <input id="email" type="email" pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/" required>
+            <input id="email" type="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
             <label> Password</label>
-            <input id="password" type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required> <!--Minimum eight characters, at least one letter and one number-->
+            <input id="password" type="password" pattern="\w+" required> <!--Minimum eight characters, at least one letter and one number-->
             <label>Confirm Password</label>
-            <input id="ConfirmPassword" type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required>
-            <input type="button" value="submit">
+            <input id="ConfirmPassword" type="password" patern="\w+" required>
+            <input type="submit" value="submit">
         </form>
         <p>
             By clicking the sign up button,you agree to our <br />
@@ -104,14 +93,11 @@
                 <a href=""><i class="fa-brands fa-twitter"></i></a>
             </div>
             <div class="nav">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About us</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">Help</a></li>
-                </ul>
+                <a href="./HomePage.html">Home</a>
+                <a href="">About us</a>
+                <a href="">Contact</a>
+                <a href="">Help</a>
             </div>
-
         </div>
         <div class="bottom">
             <p>&copy;Sunrise Painting. All Rights Reserved</p>
