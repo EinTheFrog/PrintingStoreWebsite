@@ -1,0 +1,107 @@
+@font-face {
+    font-family: "Istok";
+    src: url("./resources/fonts/Istok_Web/IstokWeb-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Habibi";
+    src: url("./resources/fonts/Habibi/Habibi-Regular.ttf");
+}
+
+h1 {
+    font-family: "Habibi";
+    text-align:center;
+}
+
+p {
+    font-family: "Istok";
+    font-size: 18px;
+    margin: 0px;
+    margin-top: 15px;
+    color: #280B45;
+}
+
+a {
+    font-family: "Istok";
+    font-size: 18px;
+    margin: 0px;
+    margin-top: 32px;
+    color: #280B45;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    width: 300px;
+
+    padding: 7px;
+
+    border-style: none;
+    border-radius: 6px;
+
+    color: #280B45;
+    font-family: "Istok";
+    font-size: 18px;
+}
+
+.background {
+    position: absolute;
+
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+
+	background: radial-gradient(ellipse at 100% 100%, #E072EA 0%, #F49393 63.2%, #FFB779 100%);
+}
+
+.container {
+    width: 360px;
+    height: 840px;
+
+    margin-left: auto;
+    margin-top: 100px;
+    margin-right: auto;
+
+    border-radius: 10px;
+    background-color: #DBB8FF;
+}
+
+.centrilized {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input_list {
+    margin: auto;
+}
+
+.submit {
+    width: 200px;
+    height:35px;
+
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    color:white;
+    font-size:18px;
+
+    border:none;
+    background-color:#5A3384;
+
+    font-family: "Istok";
+    font-size: 18px;
+}
+
+.submit:hover {
+    background-color: #573080;
+}
+
+.submit:active {
+    background-color: #48296a;
+}
+
