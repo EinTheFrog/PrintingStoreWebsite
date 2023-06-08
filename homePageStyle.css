@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: "Istok";
     src: url("./resources/fonts/Istok_Web/IstokWeb-Regular.ttf");
@@ -7,6 +8,10 @@
     font-family: "Habibi";
     src: url("./resources/fonts/Habibi/Habibi-Regular.ttf");
 }
+
+html{
+	height:100%
+}/*only added to fix gradient*/
 
 *{
 	text-decoration:none;

@@ -3,24 +3,26 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Printing store website</title>
+        <title>Sunrise Printing - Login</title>
         <link rel="stylesheet" href="styles.css"/>
     </head>
-    <body>
-        <div class="container">
-            <div class="login_popup">
+    <body onload="loadTopBar()">
+        <script src="./scripts/top_bar.js" defer></script>
+
+            <div class="form">
                 <form>
                     <div class="row">
-                        <p>username &nbsp</p>
-                        <input type="text" class="login_field" />
+                        <p>Email or phone &nbsp</p><br/>
+                        <input type="text" class="field" />
                     </div>
                     <div class="row">
-                        <p>password &nbsp</p>
-                        <input type="password" class="password_field" />
+                        <p>Password &nbsp</p><br/>
+                        <input type="password" class="field" />
                     </div>
-                    <input type="submit" class="login_button" value="Log in" />
+                    <div class="button_holder">
+                        <input type="submit" class="login_button" value="Log in" />
+                    </div>
                 </form>
             </div>
-        </div>
     </body>
 </html>
