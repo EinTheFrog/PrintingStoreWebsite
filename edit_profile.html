@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Sunrise Printing - Login</title>
+        <link rel="stylesheet" href="top_bar_style.css"/>
+        <link rel="stylesheet" href="edit_profile_styles.css"/>
+    </head>
+    <body onload="loadTopBar(); loadData();">
+        <script src="./scripts/top_bar.js" defer></script>
+        <script src="./scripts/edit_account.js" defer></script>
+        <div class="background">
+            <nav id="navbar" class="navbar">
+            </nav>
+            <div class="container">
+                <form action="/account.html" method="GET">
+                    <h1>Edit profile</h1>
+                    <div class="input_list">
+                        <p>Name</p>
+                        <input id="name" type="text" pattern=".+">
+                        <p>Phone number</p>
+                        <input id="phoneNumber" type="text" pattern="[0-9 +()]+">
+                        <p>Address</p>
+                        <input id="address" type="text">
+                        <p>Date of birth</p>
+                        <input id="dateOfBirth" type="date">
+                        <p> Email</p>
+                        <input id="email" type="email">
+                        <p>New Password</p>
+                        <input id="password" type="password" pattern=".{8,}">
+                        <p>Confirm New Password</p>
+                        <input id="ConfirmPassword" type="password" pattern=".{8,}">
+                    </div>
+                    <input class="submit" type="submit" value="update">
+                    <a class="centrilized" href="./account.html">cancel</a>
+                </form>
+             </div>
+        </div>
+    </body>
+</html>

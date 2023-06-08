@@ -23,6 +23,15 @@ p {
     color: #280B45;
 }
 
+a {
+    margin: 0;
+    margin-top: 40px;
+
+    font-family: "Istok";
+    font-size: 24px;
+    color: #527092;
+}
+
 .container {
     padding: 70px;
 }

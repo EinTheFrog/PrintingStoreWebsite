@@ -4,8 +4,8 @@
         "email": "tylerbaudelaire@gmail.com",
         "name": "Baudelaire, Tyler",
         "phoneNumber": "+1 (855) 4444-8888",
-        "addres": "Hawthorne, CA",
-        "dateOfBirth": "Mar 06, 1991",
+        "address": "Hawthorne, CA",
+        "dateOfBirth": "1991-03-06",
         "avatarSrc": "./resources/images/avatar.png",
         "orders": [
             {
@@ -14,7 +14,7 @@
                 "price": 10,
                 "imgSrc": "resources/images/office_cup.png",
                 "quantity": 1,
-                "date": "March 28, 2023"
+                "date": "2023-03-28"
             },
             {
                 "id": 4,
@@ -22,7 +22,7 @@
                 "price": 22,
                 "imgSrc": "resources/images/tyler_the_creator_poster.png",
                 "quantity": 9,
-                "date": "June 01, 2023"
+                "date": "2023-06-01"
             }
         ]
     }

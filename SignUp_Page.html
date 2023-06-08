@@ -20,7 +20,6 @@
             var namePattern = "/^[a-zA-Z\s]{1,}$/";
             var middleNamePattern = "/^[a-zA-Z]{1,20}$/";
             var emailPattern = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
-            var passwordPattern = "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/";
 
             if (!namePattern.test(firstName)) {
                 alert("First Name is invalid.");
@@ -39,11 +38,6 @@
 
             if (!emailPattern.test(email)) {
                 alert("Email is invalid.");
-                return false;
-            }
-
-            if (!passwordPattern.test(password)) {
-                alert("Password is invalid. It should be a minimum of eight characters, with at least one letter and one number.");
                 return false;
             }
 
@@ -74,9 +68,9 @@
             <label> Email</label>
             <input id="email" type="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
             <label> Password</label>
-            <input id="password" type="password" pattern="\w+" required> <!--Minimum eight characters, at least one letter and one number-->
+            <input id="password" type="password" pattern=".{8,}" required> <!--Minimum eight characters, at least one letter and one number-->
             <label>Confirm Password</label>
-            <input id="ConfirmPassword" type="password" patern="\w+" required>
+            <input id="ConfirmPassword" type="password" patern=".{8,}" required>
             <input type="submit" value="submit">
         </form>
         <p>
@@ -84,7 +78,7 @@
             <a href="#">Terms and conditions</a>&nbsp;and&nbsp;<a href="#">Policy and privacy</a>
         </p>
     </div>
-    <p class="p2">Already have an account&nbsp;<a href="#">Login here</a></p>
+    <p class="p2">Already have an account?&nbsp;<a href="./login.html">Login here</a></p>
     <footer>
         <div class="footerContainer">
             <div class="icons">
@@ -95,8 +89,7 @@
             <div class="nav">
                 <a href="./HomePage.html">Home</a>
                 <a href="">About us</a>
-                <a href="">Contact</a>
-                <a href="">Help</a>
+                <a href="./contact.html">Contact</a>
             </div>
         </div>
         <div class="bottom">
