@@ -4,25 +4,31 @@
     <head>
         <meta charset="utf-8" />
         <title>Sunrise Printing - Login</title>
-        <link rel="stylesheet" href="styles.css"/>
+        <link rel="stylesheet" href="top_bar_style.css"/>
+        <link rel="stylesheet" href="login_styles.css"/>
     </head>
     <body onload="loadTopBar()">
         <script src="./scripts/top_bar.js" defer></script>
-
-            <div class="form">
-                <form>
-                    <div class="row">
-                        <p>Email or phone &nbsp</p><br/>
-                        <input type="text" class="field" />
-                    </div>
-                    <div class="row">
-                        <p>Password &nbsp</p><br/>
-                        <input type="password" class="field" />
-                    </div>
-                    <div class="button_holder">
-                        <input type="submit" class="login_button" value="Log in" />
-                    </div>
-                </form>
-            </div>
+        <nav id="navbar" class="navbar">
+        </nav>
+        <div class="form">
+            <form action="/HomePage.html" method="GET">
+                <h1>Log in</h1>
+                <div class="row">
+                      <p>Email or phone &nbsp</p><br/>
+                      <input type="text" class="field" required />
+                   </div>
+                <div class="row">
+                    <p>Password &nbsp</p><br/>
+                    <input type="password" class="field" required />
+                </div>
+                <div class="row">
+                    <a>Forgot password?</a>
+                </div>
+                <div class="button_holder">
+                    <input type="submit" class="login_button" value="Log in" />
+                </div>
+            </form>
+         </div>
     </body>
 </html>

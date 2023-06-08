@@ -11,51 +11,48 @@
     src: url("./resources/fonts/Istok_Web/IstokWeb-Regular.ttf");
 }
 
+@font-face {
+    font-family: "Habibi";
+    src: url("./resources/fonts/Habibi/Habibi-Regular.ttf");
+}
+
 html, body {
     margin: 0px;
     height: 100%;
     width: 100%;
  }
 
- .navbar{
-	background:#FFE98A;font-family:Calibri;padding-right:10px;padding-left:10px;
-	margin: 0;
-}
-
-.navdiv {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 85px;
-	
-}
-
- ul{
-	color: #280B45;
-
-}
-
-.logo a {
-    font-size:35px;font-weight:600;color:white;
-}
-li {
-   list-style:none; display:inline-block
-}
-li a {
-   color:#280B45;font-size:18px;font-weight:bold;margin-right:25px;
-   }
-
 body {
    margin: 0;
    background: radial-gradient(68.47% 135.41% at 102.71% 100%, #E072EA 0%, #F49393 63.2%, #FFB779 100%);
 }
 
-
-
- p {
+p {
     font-family: "Istok";
-    font-size: 15px;
- }
+    font-size: 18px;
+    margin: 0px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #280B45;
+}
+
+a {
+    font-family: "Istok";
+    font-size: 18px;
+    margin: 0px;
+    margin-top: 32px;
+    color: #457699;
+}
+
+input {
+    padding: 5px;
+}
+
+h1 {
+    font-family: "Habibi";
+    text-align:center;
+    padding-top:15px;
+}
 
 .row {
     display: flex;
@@ -95,39 +92,39 @@ body {
     border-radius: 10px;
 
     font-family: "Istok";
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .login_button {
-    width:100%;
+    width: 100%;
     height:auto;
     text-align: center;
 
-    padding-left: 10px;
-    padding-top: 5px;
-    padding-right: 10px;
-    padding-bottom: 5px;
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
 
     border-style: none;
     border-radius: 10px;
 
     font-family: "Istok";
-    font-size: 15px;
-    font-weight: 200;
+    font-size: 18px;
     color:#ffffff;
 
     background-color: var(--secondary-dark);
 }
 
 .button_holder {
-    width: 75%;
+    width: 100%;
     display: flex;
     margin-bottom: 10px;
-    position: absolute;
     align-self: center;
     bottom: 5px;
 }
 
 .login_button:hover {
-    background-color: var(--text);
+    background-color: #573080;
+}
+.login_button:active {
+    background-color: #48296a;
 }
