@@ -41,7 +41,7 @@ a {
     font-size: 18px;
     margin: 0px;
     margin-top: 32px;
-    color: #457699;
+    color: #280B45;
 }
 
 input {
@@ -60,9 +60,14 @@ h1 {
     margin-bottom: 10px;
 }
 
+.register_label {
+    padding-top: 20px;
+    text-align: center;
+}
+
 .form {
     width: 350px;
-    height: 400px;
+    height: 480px;
 
     position: absolute;
     top: 50%;

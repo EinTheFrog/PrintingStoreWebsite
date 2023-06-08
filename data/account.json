@@ -4,7 +4,7 @@
         "email": "tylerbaudelaire@gmail.com",
         "name": "Baudelaire, Tyler",
         "phoneNumber": "+1 (855) 4444-8888",
-        "addres": "Hawthorne, CA",
+        "address": "Hawthorne, CA",
         "dateOfBirth": "Mar 06, 1991",
         "avatarSrc": "./resources/images/avatar.png",
         "orders": [
