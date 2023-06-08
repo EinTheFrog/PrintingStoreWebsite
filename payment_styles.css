@@ -1,0 +1,152 @@
+@font-face {
+    font-family: "Istok";
+    src: url("./resources/fonts/Istok_Web/IstokWeb-Regular.ttf");
+}
+
+.container{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background: #FFFBFF;
+}
+
+.container form{
+    width: 350px;
+    padding:28px;
+    
+    margin-top: auto;
+    margin-bottom: auto;
+    
+    background: #DBB8FF;
+    box-shadow: -3px 4px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+
+
+.inputBox1 input{
+    width: 330px;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    font-size:20px;
+    font-family: "Istok";
+    padding-left: 20px;
+}
+
+
+
+.inputBox2 input{
+    width: 330px;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    font-size:20px;
+    font-family: "Istok";
+    padding-left: 20px;
+}
+
+.inputBox3 input{
+    width: 130px;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    font-size:20px;
+    font-family: "Istok";
+    padding-left: 20px;
+}
+
+.inputBox4 input{
+    width: 130px;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    font-size:20px;
+    font-family: "Istok";
+    padding-left: 20px;
+}
+
+.form_button{
+    width: 350px;
+    height: 50px;
+    background: #5A3384;
+    border-radius: 10px;
+
+    margin-left: auto;
+    margin-top: 40px;
+    margin-right: auto;
+}
+
+.form_button:hover {
+    background: #573180;;
+}
+
+.form_button:active {
+    background: #502e75;
+}
+
+p{
+    color: #280B45;
+    margin: 0px;
+    font-size:20px;
+    font-family: "Istok";
+}
+
+.form_button p{
+    color: #FFFFFF;
+}
+
+.inputBox1{
+    margin-top:8px;
+}
+
+.inputBox2{
+    margin-top:50px;
+}
+
+.row{
+    display: flex;
+}
+
+.inputBox3{
+    margin-top: 50px;
+}
+.inputBox4{
+    margin-left:auto;
+    margin-top: 50px;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+}
+
+.payment_methods{
+    width: 80px;
+    height: auto;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.payment_container {
+    margin-top: 50px;
+}
+
+.cancel_link {
+    color: #280B45;
+    padding-top: 20px;
+    font-size: 20px;
+    font-family: "Istok";
+}
+
+.cancel_container {
+    margin-top: 20px;
+}

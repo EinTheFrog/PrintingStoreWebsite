@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Printing store website</title>
+        <link rel="stylesheet" href="account_styles.css"/>
+        <link rel="stylesheet" href="top_bar_style.css"/>
+    </head>
+    <body onload="loadData(); loadTopBar();">
+        <script src="./scripts/account.js" defer>
+        </script>
+        <script src="./scripts/top_bar.js" defer>
+        </script>
+        <nav id="navbar" class="navbar">
+            
+        </nav>
+        <div class="container">
+            <h1>
+                Your account
+            </h1>
+            <div class="row">
+                <div class="column">
+                    <p id="email"></p>
+                    <p id="name"></p>
+                    <p id="phoneNumber"></p>
+                    <p id="address"></p>
+                    <p id="dateOfBirth"></p>
+                </div>
+                <div class="column">
+                    <img id="avatar" class="avatar" />
+                </div>
+            </div>
+            <h1>
+                Past orders
+            </h1>
+            <div id="orders_list" class="list">
+            </div>
+        </div>
+    </body>
+</html>

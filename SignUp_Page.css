@@ -1,0 +1,134 @@
+﻿@font-face {
+    font-family: "Istok";
+    src: url("./resources/fonts/Istok_Web/IstokWeb-Regular.ttf");
+}
+
+body {
+    background: radial-gradient(68.47% 135.41% at 102.71% 100%, #E072EA 0%, #F49393 63.2%, #FFB779 100%);
+    font-family: "Istok";
+}
+.sign {
+    width:360px;
+    height:100%;
+    margin:auto;
+    background-color:#DBB8FF;
+    border-radius:10px;
+}
+h1 {
+    font-family: "Habibi";
+    text-align:center;
+    padding-top:15px;
+}
+form {
+    width:300px;
+    margin-left:20px;
+}
+form label {
+    display:flex;
+    margin-top:20px;
+    font-size:18px;
+}
+form input {
+    width:100%;
+    padding:7px;
+    border:none;
+    border: 1px solid white;
+    border-radius:6px;
+    outline:none;
+}
+
+input[type="submit"] {
+    width:320px;
+    height:35px;
+    border:none;
+    margin-top:20px;
+    background-color:#5A3384;
+    color:white;
+    font-size:19px;
+}
+input[type="submit"]:hover {
+    background-color: #573080;
+}
+input[type="submit"]:active {
+    background-color: #48296a;
+}
+p {
+    text-align:center;
+    padding-top:20px;
+    font-size:15px;
+    position:relative;
+    bottom:25px;
+}
+.p2 {
+    text-align:center;
+    color:white;
+    font-size:15px;
+    margin-top:-10px;
+    position:relative;
+    top:3px;
+}
+.p2 a {
+    color:#5A3384;
+}
+footer {
+    padding: 0;
+    box-sizing: border-box; 
+    margin: 0;
+    background-color: #111;
+}
+.footerContainer{
+    width:100%;
+    padding-top: 30px;
+}
+.icons{
+    display:flex;
+    justify-content:center;
+}
+.icons a{
+    text-decoration:none;
+    padding:10px;
+    background-color:white;
+    margin:10px;
+    border-radius:50%;
+}
+.icons a i{
+    font-size:2em;
+    color:black;
+    opacity:0.9;
+}
+.icons a:hover{
+    background-color:#111;
+    transition:0.5s;
+}
+.icons a:hover i{
+    color:white;
+    transition:0.5s;
+}
+.nav {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav a{
+    color:white;
+    margin:20px;
+    text-decoration:none;
+    font-size:1.3em;
+    opacity:0.7;
+    transition:0.5s;
+}
+
+.nav a:hover{
+    opacity: 0.9;
+}
+
+.bottom{
+    background-color:#000;
+    padding:20px;
+    text-align:center;
+}
+
+.bottom p{
+    color:white;
+}

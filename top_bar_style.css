@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "Istok";
+    src: url("./resources/fonts/Istok_Web/IstokWeb-Regular.ttf");
+}
+
+html, body {
+    margin: 0px;
+}
+
+li {
+	list-style: none; 
+    display: inline-block;
+}
+
+li a {
+	color: #280B45;
+    font-size: 24px;
+    font-family: Istok;
+    font-weight: bold;
+    margin-right: 25px;
+    text-decoration: none;
+}
+
+.navbar{
+	background: #FFE98A;
+    font-family: Calibri;
+    padding-right: 10px;
+    padding-left: 10px;
+	margin: 0;
+}
+
+.navdiv {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 85px;
+}
