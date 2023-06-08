@@ -11,7 +11,7 @@ function loadTopBar() {
                 <li><a>|</a></li>
                 <li><a class="tab" href="./cart.html">Cart</a></li>
                 <li><a>|</a></li>
-                <li><a class="tab" href="#">Login</a></li>
+                <li><a class="tab" href="./login.html">Login</a></li>
                 <li><a>|</a></li>
                 <li><a class="tab" href="./SignUp_Page.html">Sign up</a></li>
             </ul>
