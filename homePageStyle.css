@@ -13,6 +13,11 @@ html{
 	height:100%
 }/*only added to fix gradient*/
 
+body {
+	height: 100%;
+	background: radial-gradient(ellipse at 100% 100%, #E072EA 0%, #F49393 63.2%, #FFB779 100%);
+}
+
 *{
 	text-decoration:none;
 }
@@ -21,7 +26,7 @@ html{
 	font-family: Habibi;
 	font-size: 75px;
 	color: #280B45;
-	margin-top: 300px;
+	margin-top: 200px;
 }
 .Button {
 	border-radius: 4px;
@@ -62,17 +67,6 @@ html{
 .Button:hover span:after {
 	opacity: 1;
 	right: 0;
-}
-
-.container {
-	position: absolute;
-
-	left: 0px;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-
-	background: radial-gradient(ellipse at 100% 100%, #E072EA 0%, #F49393 63.2%, #FFB779 100%);
 }
 
 .centr_content {
