@@ -10,17 +10,30 @@
     <body onload="loadTopBar(); loadData();">
         <script src="./scripts/top_bar.js" defer></script>
         <script src="./scripts/edit_account.js" defer></script>
+        <script>
+            function validatePasswords() {
+                var password = document.getElementById("password").value;
+                var confirmPassword = document.getElementById("ConfirmPassword").value;
+    
+                if (password != confirmPassword) {
+                    alert("Passwords do not match.");
+                    return false;
+                }
+    
+                return true;
+            }
+        </script>
         <div class="background">
             <nav id="navbar" class="navbar">
             </nav>
             <div class="container">
-                <form action="/account.html" method="GET">
+                <form action="/account.html" method="GET" onsubmit="return validatePasswords()">
                     <h1>Edit profile</h1>
                     <div class="input_list">
                         <p>Name</p>
                         <input id="name" type="text" pattern=".+">
                         <p>Phone number</p>
-                        <input id="phoneNumber" type="text" pattern="[0-9 +()]+">
+                        <input id="phoneNumber" type="text" pattern="[0-9 +()-]+">
                         <p>Address</p>
                         <input id="address" type="text">
                         <p>Date of birth</p>

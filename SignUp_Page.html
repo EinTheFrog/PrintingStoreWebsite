@@ -10,39 +10,11 @@
           integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>
-        function validateForm() {
-            var firstName = document.getElementById("FirstName").value;
-            var middleName = document.getElementById("MiddleName").value;
-            var lastName = document.getElementById("LastName").value;
-            var email = document.getElementById("email").value;
+        function validatePasswords() {
             var password = document.getElementById("password").value;
             var confirmPassword = document.getElementById("ConfirmPassword").value;
 
-            var namePattern = "/^[a-zA-Z\s]{1,}$/";
-            var middleNamePattern = "/^[a-zA-Z]{1,20}$/";
-            var emailPattern = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
-
-            if (!namePattern.test(firstName)) {
-                alert("First Name is invalid.");
-                return false;
-            }
-
-            if (!middleNamePattern.test(middleName)) {
-                alert("Middle Name is invalid.");
-                return false;
-            }
-
-            if (!namePattern.test(lastName)) {
-                alert("Last Name is invalid.");
-                return false;
-            }
-
-            if (!emailPattern.test(email)) {
-                alert("Email is invalid.");
-                return false;
-            }
-
-            if (password !== confirmPassword) {
+            if (password != confirmPassword) {
                 alert("Passwords do not match.");
                 return false;
             }
@@ -59,7 +31,7 @@
     </div>
     <div class="sign">
         <h1>Join us</h1>
-        <form action="/HomePage.html" method="GET">
+        <form action="/HomePage.html" method="GET" onsubmit="return validatePasswords()">
             <label>First Name</label>
             <input id="FirstName" type="text" pattern="^[a-zA-Z\s]{1,20}$" required>
             <label>Middle Name</label>
@@ -69,7 +41,7 @@
             <label> Email</label>
             <input id="email" type="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
             <label> Password</label>
-            <input id="password" type="password" pattern=".{8,}" required> <!--Minimum eight characters, at least one letter and one number-->
+            <input id="password" type="password" pattern=".{8,}" required> <!--Minimum eight characters-->
             <label>Confirm Password</label>
             <input id="ConfirmPassword" type="password" patern=".{8,}" required>
             <input type="submit" value="submit">
