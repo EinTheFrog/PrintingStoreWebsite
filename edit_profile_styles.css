@@ -29,6 +29,11 @@ a {
     color: #280B45;
 }
 
+body {
+    height: 100%;
+	background: radial-gradient(ellipse at 100% 100%, #E072EA 0%, #F49393 63.2%, #FFB779 100%);
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -47,24 +52,16 @@ form input {
     font-size: 18px;
 }
 
-.background {
-    position: absolute;
-
-	left: 0px;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-
-	background: radial-gradient(ellipse at 100% 100%, #E072EA 0%, #F49393 63.2%, #FFB779 100%);
-}
-
 .container {
     width: 360px;
-    height: 780px;
+    height: 100%;
 
     margin-left: auto;
     margin-top: 100px;
     margin-right: auto;
+    margin-bottom: 100px;
+
+    padding-bottom: 20px;
 
     border-radius: 10px;
     background-color: #DBB8FF;
@@ -104,4 +101,3 @@ form input {
 .submit:active {
     background-color: #48296a;
 }
-
