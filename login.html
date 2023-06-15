@@ -12,15 +12,16 @@
         <nav id="navbar" class="navbar">
         </nav>
         <div class="form">
-            <form action="/HomePage.html" method="GET">
+            <form action="/loginClick" method="POST">
                 <h1>Log in</h1>
+                <p id="incorrect_data"></p>
                 <div class="row">
-                      <p>Email or phone &nbsp</p><br/>
-                      <input type="text" class="field" required />
+                      <p>Email &nbsp</p><br/>
+                      <input type="text" name="email" class="field" required />
                    </div>
                 <div class="row">
                     <p>Password &nbsp</p><br/>
-                    <input type="password" class="field" required />
+                    <input type="password" name="userPassword" class="field" required />
                 </div>
                 <div class="row">
                     <a href="./contact.html">Forgot password?</a>
