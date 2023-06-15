@@ -1,7 +1,7 @@
 let fs = require("fs");
 
-exports.showContact = function(res) {
-    fs.readFile("./contact.html", function (err, data) {
+exports.showHome = function(res) {
+    fs.readFile("./HomePage.html", function (err, data) {
         if (err) {
             res.writeHead(404, { "Content-Type": "text/html" });
             return res.end("404 Not Found");
@@ -12,8 +12,8 @@ exports.showContact = function(res) {
     });
 };
 
-exports.useContactStyle = function(res) {
-    fs.readFile("./contact_styles.css", function (err, data) {
+exports.useHomeStyle = function(res) {
+    fs.readFile("./homePageStyle.css", function (err, data) {
         if (err) {
             res.writeHead(404, { "Content-Type": "text/css" });
             return res.end("404 Not Found");
