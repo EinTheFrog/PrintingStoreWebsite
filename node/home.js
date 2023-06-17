@@ -11,3 +11,7 @@ exports.showHome = function(res) {
         return res.end();
     });
 };
+
+exports.proceedHomeClick = function(res) {
+    console.log("User clicked on home!");
+}

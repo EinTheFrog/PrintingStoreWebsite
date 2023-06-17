@@ -57,5 +57,10 @@ app.get("/", function(req, res) {
     homeModule.showHome(res);
 });
 
+app.post("/homeClick", function(req, res) {
+    console.log("home");
+    homeModule.proceedHomeClick(res);
+});
+
 app.use(express.static("./"));
 app.listen(8080);

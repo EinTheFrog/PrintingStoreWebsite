@@ -9,6 +9,16 @@
 <body onload="loadTopBar()">
     <script src="./scripts/top_bar.js" defer>
     </script>
+    <script>
+        function proceedHomeClick() {
+            var form = document.createElement('form');
+            form.setAttribute('method', 'post');
+            form.setAttribute('action', '/homeClick');
+            form.style.display = 'hidden';
+            document.body.appendChild(form)
+            form.submit();
+        }
+    </script>
     <div class="container">
         <nav id="navbar" class="navbar">
         </nav>
@@ -17,7 +27,7 @@
             Spread joy with our
             printing solutions.
             </p>
-            <button class="Button" onclick="location.href='/shop'"> <span>Visit shop</span></button>
+            <button class="Button" onclick="proceedHomeClick()"> <span>Visit shop</span></button>
         </div>
     </div>
 </body>
