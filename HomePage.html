@@ -1,13 +1,23 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="homePageStyle.css">
-    <link rel="stylesheet" href="top_bar_style.css"/>
+    <link rel="stylesheet" type="text/css" href="homePageStyle.css">
+    <link rel="stylesheet" type="text/css" href="top_bar_style.css"/>
     <link href='https://fonts.googleapis.com/css?family=Habibi' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Istok Web' rel='stylesheet'>
 </head>
 <body onload="loadTopBar()">
     <script src="./scripts/top_bar.js" defer>
+    </script>
+    <script>
+        function proceedHomeClick() {
+            var form = document.createElement('form');
+            form.setAttribute('method', 'post');
+            form.setAttribute('action', '/homeClick');
+            form.style.display = 'hidden';
+            document.body.appendChild(form)
+            form.submit();
+        }
     </script>
     <div class="container">
         <nav id="navbar" class="navbar">
@@ -17,7 +27,7 @@
             Spread joy with our
             printing solutions.
             </p>
-            <button class="Button" onclick="location.href='shop.html'"> <span>Visit shop</span></button>
+            <button class="Button" onclick="proceedHomeClick()"> <span>Visit shop</span></button>
         </div>
     </div>
 </body>
