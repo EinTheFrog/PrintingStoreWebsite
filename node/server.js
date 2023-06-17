@@ -1,93 +1,61 @@
-let http = require("http");
-let url = require("url");
-let fs = require("fs");
-let querystring = require("querystring");
+const express = require('express')
+const url = require("url");
+const fs = require("fs");
+const querystring = require("querystring");
 
-let loginModule = require("./login");
-let signUpModule = require("./signUp");
-let accountModule = require("./account");
-let editProfileModule = require("./editProfile");
-let contactModule = require("./contact");
-let aboutUsModule = require("./aboutUs");
-let shopModule = require("./shop");
-let cartModule = require("./cart");
-let paymentModule = require("./payment");
-let topBarModule = require("./topBar");
-let homeModule = require("./home");
+const loginModule = require("./login");
+const signUpModule = require("./signUp");
+const accountModule = require("./account");
+const editProfileModule = require("./editProfile");
+const contactModule = require("./contact");
+const aboutUsModule = require("./aboutUs");
+const shopModule = require("./shop");
+const cartModule = require("./cart");
+const paymentModule = require("./payment");
+const homeModule = require("./home");
 
+const app = express();
 
-http.createServer(function(req, res) {
-    switch(req.url) {
-        // styles
-        case "./login_styles.css":
-            loginModule.userModuleStyle(res);
-            break;
-        case "./SignUp_Page.css":
-            signUpModule.useSignUpStyle(res);
-            break;
-        case "./account_styles.css":
-            accountModule.useAccountStyle(res);
-            break;
-        case "./edit_profile_styles.css":
-            editProfileModule.useEditProfileStyle(res);
-            break;
-        case "./contact_styles.css":
-            contactModule.useContactStyle(res);
-            break;
-        case "./about_Us_Style.css":
-            aboutUsModule.useAboutUsStyle(res);
-            break;
-        case "./shop_styles.css":
-            shopModule.useShopStyle(res);
-            break;
-        case "./cart_styles.css":
-            cartModule.useCartStyle(res);
-            break;
-        case "./payment_styles.css":
-            paymentModule.userPaymentStyle(res);
-            break;
-        case "./top_bar_style.css": 
-            topBarModule.useTopBarStyle(res);
-            break;
-        case "./homePageStyle.css": 
-            homeModule.useHomeStyle(res);
-            break;
-        // html-s
-        case "/login":
-            console.log("login");
-            showLogin();
-            break;
-        case "/sign_up":
-            console.log("sing_up");
-            showSignUp();
-            break;
-        case "/account":
-            console.log("contact");
-            showAccount();
-            break;
-        case "/edit_profile":
-            console.log("contact");
-            showEditProfile();
-            break;
-        case "/contact":
-            console.log("contact");
-            contactModule.showContact(res);
-            break;
-        case "/about_us":
-            console.log("contact");
-            showAboutUs();
-            break;
-        case "/shop":
-            console.log("shop");
-            showShop();
-            break;
-        case "/cart":
-            console.log("cart");
-            showCart();
-            break;
-        default: 
-            console.log("home");
-            homeModule.showHome(res);
-            break;
-    }
-}).listen(8080);
+app.get("/login", function(req, res) {
+    console.log("login");
+    loginModule.showLogin(res);
+});
+app.get("/sign_up", function(req, res) {
+    console.log("sing_up");
+    signUpModule.showSignUp(res);
+});
+app.get("/account", function(req, res) {
+    console.log("account");
+    accountModule.showAccount(res);
+});
+app.get("/edit_profile", function(req, res) {
+    console.log("edit_profile");
+    editProfileModule.showEditProfile(res);
+});
+app.get("/contact", function(req, res) {
+    console.log("contact");
+    contactModule.showContact(res);
+});
+app.get("/about_us", function(req, res) {
+    console.log("about_us");
+    aboutUsModule.showAboutUs(res);
+});
+app.get("/shop", function(req, res) {
+    console.log("shop");
+    shopModule.showShop(res);
+});
+app.get("/cart", function(req, res) {
+    console.log("cart");
+    cartModule.showCart(res);
+});
+app.get("/payment", function(req, res) {
+    console.log("payment");
+    paymentModule.showPayment(res);
+});
+app.get("/", function(req, res) {
+    console.log("home");
+    homeModule.showHome(res);
+});
+
+app.use(express.static("./"));
+app.listen(8080);
