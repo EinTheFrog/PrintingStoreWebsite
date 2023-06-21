@@ -30,17 +30,17 @@
     </div>
     <div class="sign">
         <h1>Join us</h1>
-        <form action="/HomePage.html" method="GET" onsubmit="return validatePasswords()">
+        <form action="/signUpClick" method="POST" onsubmit="return validatePasswords()">
             <label>First Name</label>
-            <input id="FirstName" type="text" pattern="^[a-zA-Z\s]{1,20}$" required>
+            <input id="FirstName" type="text" name="firstName" pattern="^[a-zA-Z\s]{1,20}$" required>
             <label>Middle Name</label>
-            <input id="MiddleName" type="text" pattern="^[a-zA-Z]{1,20}$" required>
+            <input id="MiddleName" type="text" name="middleName" pattern="^[a-zA-Z]{1,20}$" required>
             <label>Last Name</label>
-            <input id="LastName" type="text" pattern="^[a-zA-Z]{1,20}$" required>
+            <input id="LastName" type="text" name="lastName" pattern="^[a-zA-Z]{1,20}$" required>
             <label> Email</label>
-            <input id="email" type="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+            <input id="email" type="email" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
             <label> Password</label>
-            <input id="password" type="password" pattern=".{8,}" required> <!--Minimum eight characters-->
+            <input id="password" type="password" name="password" pattern=".{8,}" required> <!--Minimum eight characters-->
             <label>Confirm Password</label>
             <input id="ConfirmPassword" type="password" patern=".{8,}" required>
             <input type="submit" value="submit">

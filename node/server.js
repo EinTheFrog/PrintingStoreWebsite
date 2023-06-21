@@ -1,7 +1,5 @@
-const express = require('express')
-const url = require("url");
-const fs = require("fs");
-const querystring = require("querystring");
+const express = require('express');
+const bodyParser = require('body-parser');
 
 const loginModule = require("./login");
 const signUpModule = require("./signUp");
@@ -15,14 +13,15 @@ const paymentModule = require("./payment");
 const homeModule = require("./home");
 
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/login", function(req, res) {
     console.log("login");
     loginModule.showLogin(res);
 });
 app.get("/sign_up", function(req, res) {
-    console.log("sing_up");
-    signUpModule.showSignUp(res);
+    console.log("sign_up");
+    signUpModule.showSignUp(req, res);
 });
 app.get("/account", function(req, res) {
     console.log("account");
@@ -58,8 +57,11 @@ app.get("/", function(req, res) {
 });
 
 app.post("/homeClick", function(req, res) {
-    console.log("home");
-    homeModule.proceedHomeClick(res);
+    homeModule.proceedHomeClick(res); 
+});
+app.post("/signUpClick", function(req, res) {
+    console.log(req.body);
+    signUpModule.proceedSignUpClick(req, res);
 });
 
 app.use(express.static("./"));
