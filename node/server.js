@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mysql = require("mysql");
 
 const loginModule = require("./login");
 const signUpModule = require("./signUp");
@@ -11,6 +12,13 @@ const shopModule = require("./shop");
 const cartModule = require("./cart");
 const paymentModule = require("./payment");
 const homeModule = require("./home");
+
+const con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "MaxPain2001",
+    database: "printing_store"
+})
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -60,7 +68,7 @@ app.post("/homeClick", function(req, res) {
     homeModule.proceedHomeClick(res); 
 });
 app.post("/signUpClick", function(req, res) {
-    signUpModule.proceedSignUpClick(req, res);
+    signUpModule.proceedSignUpClick(req, res, con);
 });
 
 app.use(express.static("./"));

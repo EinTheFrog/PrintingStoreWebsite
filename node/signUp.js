@@ -12,13 +12,28 @@ exports.showSignUp = function(req, res) {
     });
 };
 
-exports.proceedSignUpClick = function(req, res) {
+exports.proceedSignUpClick = function(req, res, con) {
     let userData = req.body;
+    let userName = userData.firstName + " " + userData.middleName + " " + userData.lastName;
+    let userEmail = userData.email;
+    let userPassword = userData.password;
+
+    let sqlInsert = `
+        INSERT INTO store_user(user_name, email, user_password) VALUES
+        ('${userName}', '${userEmail}', '${userPassword}');
+    `;
+
+    con.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected")
+        
+        con.query(sqlInsert, function(err, result) {
+            if (err) throw err;
+            console.log("New record inserted into shop user table");
+        });
+    });
+
     
-    if (userData.email == "tylerbaudelaire@gmail.com") {
-        res.redirect("/");
-    } else {
-        res.redirect("/sign_up");
-    }
+    res.redirect("/login");
     return res.end();
 }
