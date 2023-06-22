@@ -60,7 +60,6 @@ app.post("/homeClick", function(req, res) {
     homeModule.proceedHomeClick(res); 
 });
 app.post("/signUpClick", function(req, res) {
-    console.log(req.body);
     signUpModule.proceedSignUpClick(req, res);
 });
 

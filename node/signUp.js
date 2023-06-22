@@ -13,5 +13,12 @@ exports.showSignUp = function(req, res) {
 };
 
 exports.proceedSignUpClick = function(req, res) {
-    console.log(req.body);
+    let userData = req.body;
+    
+    if (userData.email == "tylerbaudelaire@gmail.com") {
+        res.redirect("/");
+    } else {
+        res.redirect("/sign_up");
+    }
+    return res.end();
 }
