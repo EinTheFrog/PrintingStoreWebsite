@@ -1,7 +1,6 @@
-const express = require("express");
-const url = require("url");
-const fs = require("fs");
-const querystring = require("querystring");
+const express = require('express');
+const bodyParser = require('body-parser');
+const mysql = require("mysql");
 
 const loginModule = require("./login");
 const signUpModule = require("./signUp");
@@ -14,7 +13,15 @@ const cartModule = require("./cart");
 const paymentModule = require("./payment");
 const homeModule = require("./home");
 
+const con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "MaxPain2001",
+    database: "printing_store"
+})
+
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/login", function(req, res) {
     console.log("login");
@@ -22,7 +29,7 @@ app.get("/login", function(req, res) {
 });
 app.get("/sign_up", function(req, res) {
     console.log("sign_up");
-    signUpModule.showSignUp(res);
+    signUpModule.showSignUp(req, res);
 });
 app.get("/account", function(req, res) {
     console.log("account");
@@ -58,8 +65,10 @@ app.get("/", function(req, res) {
 });
 
 app.post("/homeClick", function(req, res) {
-    console.log("home");
-    homeModule.proceedHomeClick(res);
+    homeModule.proceedHomeClick(res); 
+});
+app.post("/signUpClick", function(req, res) {
+    signUpModule.proceedSignUpClick(req, res, con);
 });
 
 app.use(express.static("./"));
