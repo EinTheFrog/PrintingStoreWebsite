@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require("express");
 const url = require("url");
 const fs = require("fs");
 const querystring = require("querystring");
@@ -21,7 +21,7 @@ app.get("/login", function(req, res) {
     loginModule.showLogin(res);
 });
 app.get("/sign_up", function(req, res) {
-    console.log("sing_up");
+    console.log("sign_up");
     signUpModule.showSignUp(res);
 });
 app.get("/account", function(req, res) {
