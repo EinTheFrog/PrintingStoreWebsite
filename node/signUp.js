@@ -1,4 +1,5 @@
-let fs = require("fs");
+const fs = require("fs");
+const mysql = require("mysql");
 
 exports.showSignUp = function(req, res) {
     fs.readFile("./SignUp_Page.html", function (err, data) {
@@ -8,11 +9,19 @@ exports.showSignUp = function(req, res) {
         }
         res.writeHead(200, { "Content-Type": "text/html" });
         res.write(data);
+        console.log(req.query);
+        if (req.query.userExists) {
+            res.write(`
+                <script>
+                    document.getElementById("user_exists").innerHTML = "User with this email already exists. Please use another email or log in to an existing account";
+                </script>
+            `)
+        }
         return res.end();
     });
 };
 
-exports.proceedSignUpClick = function(req, res, con) {
+exports.proceedSignUpClick = function(req, res) {
     let userData = req.body;
     let userName = userData.firstName + " " + userData.middleName + " " + userData.lastName;
     let userEmail = userData.email;
@@ -23,17 +32,32 @@ exports.proceedSignUpClick = function(req, res, con) {
         ('${userName}', '${userEmail}', '${userPassword}');
     `;
 
-    con.connect(function(err) {
-        if (err) throw err;
-        console.log("Connected")
-        
-        con.query(sqlInsert, function(err, result) {
-            if (err) throw err;
-            console.log("New record inserted into shop user table");
-        });
+    let con = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "MaxPain2001",
+        database: "printing_store"
     });
 
-    
-    res.redirect("/login");
-    return res.end();
+    con.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected");
+        
+        con.query(sqlInsert, function(err, result) {
+            if (err) {
+                if (err.code = "ER_DUP_ENTRY") {
+                    res.redirect("/sign_up?userExists=true");
+                } else {
+                    throw err;
+                }
+                con.end();
+                return res.end();
+            } else {
+                console.log("New record inserted into shop user table");
+                res.redirect("/login");
+                con.end();
+                return res.end();
+            }
+        });
+    });
 }
