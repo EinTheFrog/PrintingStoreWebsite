@@ -13,5 +13,6 @@ exports.showHome = function(res) {
 };
 
 exports.proceedHomeClick = function(res) {
-    console.log("User clicked on home!");
+    console.log("user clicked on visit shop");
+    
 }
