@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 const fs = require('fs');
 
-exports.showHome = function (res) {
+exports.showShop = function (res) {
     fs.readFile("./shop.html", function (err, data) {
         if (err) {
             res.writeHead(404, { "Content-Type": "text/html" });
@@ -13,7 +13,7 @@ exports.showHome = function (res) {
     });
 };
 
-exports.proceedShopClick = function (res) {
+exports.proceedHomeClick = function (res) {
     var con = mysql.createConnection({
         host: "localhost",
         user: "root",
@@ -25,12 +25,12 @@ exports.proceedShopClick = function (res) {
         if (err) throw err;
         console.log("Connected!");
 
-        var sql = "SELECT * FROM printing_store";
+        var sql = "SELECT * FROM item";
         con.query(sql, function (err, result) {
             if (err) throw err;
 
             const jsonData = JSON.stringify(result);
-            fs.writeFile('blank.json', jsonData, 'utf8', function (err) {
+            fs.writeFile('items.json', jsonData, 'utf8', function (err) {
                 if (err) throw err;
                 console.log("Written successfully");
 
