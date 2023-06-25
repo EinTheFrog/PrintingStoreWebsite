@@ -1,6 +1,7 @@
-let fs = require("fs");
+const mysql = require('mysql');
+const fs = require('fs');
 
-exports.showCart = function(res) {
+exports.showCart = function (res) {
     fs.readFile("./cart.html", function (err, data) {
         if (err) {
             res.writeHead(404, { "Content-Type": "text/html" });
@@ -10,4 +11,36 @@ exports.showCart = function(res) {
         res.write(data);
         return res.end();
     });
+};
+
+exports.proceedHomeClick = function (res) {
+    var con = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "rootroot",
+        database: "printing_store"
+    });
+
+    con.connect(function (err) {
+        if (err) throw err;
+        console.log("Connected!");
+
+        var sql = "SELECT * FROM cart_item";
+        con.query(sql, function (err, result) {
+            if (err) throw err;
+
+            const jsonData = JSON.stringify(result);
+            fs.writeFile('cart.json', jsonData, 'utf8', function (err) {
+                if (err) throw err;
+                console.log("Written successfully");
+
+                con.end(function (err) {
+                    if (err) throw err;
+                    console.log("Database connection closed.");
+                });
+            });
+        });
+    });
+
+    console.log("User accessed cart page");
 };
