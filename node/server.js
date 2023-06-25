@@ -61,6 +61,10 @@ app.get("/", function(req, res) {
 app.post("/homeClick", function(req, res) {
     homeModule.proceedHomeClick(res); 
 });
+app.post("/loginClick", function(req,res) {
+    console.log("login");
+    loginModule.proceedloginClick(req, res);
+})
 app.post("/signUpClick", function(req, res) {
     signUpModule.proceedSignUpClick(req, res);
 });

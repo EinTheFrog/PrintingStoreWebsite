@@ -35,7 +35,7 @@ exports.proceedSignUpClick = function(req, res) {
     let con = mysql.createConnection({
         host: "localhost",
         user: "root",
-        password: "MaxPain2001",
+        password: "root",
         database: "printing_store"
     });
 
