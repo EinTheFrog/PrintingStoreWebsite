@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const fileUpload = require('express-fileupload');
 
 const loginModule = require("./login");
 const signUpModule = require("./signUp");
@@ -14,6 +15,7 @@ const homeModule = require("./home");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(fileUpload());
 
 app.get("/login", function(req, res) {
     console.log("login");

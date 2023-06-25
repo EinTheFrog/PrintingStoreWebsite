@@ -27,7 +27,7 @@
             <nav id="navbar" class="navbar">
             </nav>
             <div class="container">
-                <form action="/editProfileClick" method="POST" onsubmit="return validatePasswords()">
+                <form action="/editProfileClick" method="POST" enctype="multipart/form-data" onsubmit="return validatePasswords()">
                     <h1>Edit profile</h1>
                     <div class="input_list">
                         <p>Name</p>
@@ -39,7 +39,7 @@
                         <p>Date of birth</p>
                         <input id="dateOfBirth" type="date" name="dateOfBirth">
                         <p>Avatar photo</p>
-                        <input class="file_uploader" id="avatar" type="file" name="avatar_src" accept="image/png, image/gif, image/jpeg">
+                        <input class="file_uploader" id="avatar" type="file" name="avatar" accept="image/png, image/gif, image/jpeg">
                         <p> Email</p>
                         <input id="email" type="email" name="email">
                         <p>New Password</p>

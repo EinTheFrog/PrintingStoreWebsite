@@ -19,14 +19,14 @@ exports.proceedEditProfileClick = function(req, res) {
     let userPhoneNumber = userData.phoneNumber;
     let userAddress = userData.address;
     let userDateOfBirth = userData.dateOfBirth;
+    let userAvatarSrc = "";
     let userEmail = userData.email;
     let userPassword = userData.password;
-
     
     let con = mysql.createConnection({
         host: "localhost",
         user: "root",
-        password: "MaxPain2001",
+        password: "root",
         database: "printing_store"
     });
 
@@ -39,24 +39,59 @@ exports.proceedEditProfileClick = function(req, res) {
         console.log("Connected");
         
         con.query(sqlFindId, function(err, result) {
+            if (err) throw err;
+
             let userId = result[0].id;
-            console.log(result);
 
             if (userPassword === undefined) {
                 userPassword = result[0].user_password;
             }
 
+            if (req.files) {
+                let avatarFile = req.files.avatar;
+                let buf = Buffer.from(avatarFile.data, avatarFile.encoding);
+                let newAvatarFilePath = "./resources/images/" + userId + "_" + avatarFile.name;
+                fs.writeFile(newAvatarFilePath, buf, function(err) { 
+                    if (err) throw err;
+                });
+                userAvatarSrc = newAvatarFilePath;
+            }
+
+            if (userAvatarSrc == "") {
+                userAvatarSrc = result[0].avatar_src;
+            }
+
+
             let sqlUpdate = `
                 UPDATE store_user
-                SET user_name = '${userName}', mobile = '${userPhoneNumber}', 
+                SET user_name = '${userName}', email = '${userEmail}', mobile = '${userPhoneNumber}', 
                 address = '${userAddress}', date_of_birth = '${userDateOfBirth}',
-                email = '${userEmail}', user_password = '${userPassword}'
+                avatar_src = '${userAvatarSrc}', user_password = '${userPassword}'
                 WHERE id = '${userId}';
             `;
+
+            let newUserData = {
+                email: userEmail,
+                name: userName,
+                phoneNumber: userPhoneNumber,
+                address: userAddress,
+                dateOfBirth: userDateOfBirth,
+                avatarSrc: userAvatarSrc
+            }
         
             con.query(sqlUpdate, function(err, result) {
                 if (err) throw err;
                 console.log("User record updated");
+
+                fs.readFile("./data/account.json", function(err, data) {
+                    let parsedData = JSON.parse(data);
+                    let oldUserData = parsedData.account;
+                    newUserData.orders = oldUserData.orders;
+                    parsedData.account = newUserData;
+                    fs.writeFile("./data/account.json", JSON.stringify(parsedData), function(err) {
+                        if (err) throw err;
+                    });
+                });
                 res.redirect("/account");
                 con.end();
                 return res.end();
