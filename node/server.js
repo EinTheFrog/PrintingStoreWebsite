@@ -62,6 +62,9 @@ app.post("/homeClick", function(req, res) {
 app.post("/signUpClick", function(req, res) {
     signUpModule.proceedSignUpClick(req, res);
 });
+app.post("/editProfileClick", function(req, res) {
+    editProfileModule.proceedEditProfileClick(req, res);
+});
 
 app.use(express.static("./"));
 app.listen(8080);

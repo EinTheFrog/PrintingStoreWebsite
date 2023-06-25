@@ -27,28 +27,28 @@
             <nav id="navbar" class="navbar">
             </nav>
             <div class="container">
-                <form action="/account.html" method="GET" onsubmit="return validatePasswords()">
+                <form action="/editProfileClick" method="POST" onsubmit="return validatePasswords()">
                     <h1>Edit profile</h1>
                     <div class="input_list">
                         <p>Name</p>
-                        <input id="name" type="text" pattern=".+">
+                        <input id="name" type="text" name="userName" pattern=".+">
                         <p>Phone number</p>
-                        <input id="phoneNumber" type="text" pattern="[0-9 +()-]+">
+                        <input id="phoneNumber" type="text" name="phoneNumber" pattern="[0-9 +()-]+">
                         <p>Address</p>
-                        <input id="address" type="text">
+                        <input id="address" type="text" name="address">
                         <p>Date of birth</p>
-                        <input id="dateOfBirth" type="date">
+                        <input id="dateOfBirth" type="date" name="dateOfBirth">
                         <p>Avatar photo</p>
-                        <input class="file_uploader" id="avatar" type="file" accept="image/png, image/gif, image/jpeg">
+                        <input class="file_uploader" id="avatar" type="file" name="avatar_src" accept="image/png, image/gif, image/jpeg">
                         <p> Email</p>
-                        <input id="email" type="email">
+                        <input id="email" type="email" name="email">
                         <p>New Password</p>
-                        <input id="password" type="password" pattern=".{8,}">
+                        <input id="password" type="password" pattern=".{8,}" name="user_password">
                         <p>Confirm New Password</p>
                         <input id="ConfirmPassword" type="password" pattern=".{8,}">
                     </div>
                     <input class="submit" type="submit" value="update">
-                    <a class="centrilized" href="./account.html">cancel</a>
+                    <a class="centrilized" href="/account">cancel</a>
                 </form>
              </div>
         </div>
