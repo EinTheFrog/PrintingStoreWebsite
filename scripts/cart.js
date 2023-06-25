@@ -27,6 +27,8 @@ function loadTotalPrice(xhttp) {
 }
 
 function generateItems(itemDataList) {
+    if (itemDataList === undefined) return "";
+
     let result = "";
     for (i = 0; i < itemDataList.length; i++) {
         result += generateItem(itemDataList[i]);
@@ -35,6 +37,8 @@ function generateItems(itemDataList) {
 }
 
 function calculateTotalPrice(itemDataList) {
+    if (itemDataList === undefined) return 0;
+
     let result = 0;
     for (i = 0; i < itemDataList.length; i++) {
         result += itemDataList[i].price * itemDataList[i].quantity;
