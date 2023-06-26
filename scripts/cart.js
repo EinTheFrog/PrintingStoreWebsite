@@ -27,6 +27,8 @@ function loadTotalPrice(xhttp) {
 }
 
 function generateItems(itemDataList) {
+    if (itemDataList === undefined) return "";
+
     let result = "";
     for (i = 0; i < itemDataList.length; i++) {
         result += generateItem(itemDataList[i]);
@@ -35,11 +37,25 @@ function generateItems(itemDataList) {
 }
 
 function calculateTotalPrice(itemDataList) {
+    if (itemDataList === undefined) return 0;
+
     let result = 0;
     for (i = 0; i < itemDataList.length; i++) {
         result += itemDataList[i].price * itemDataList[i].quantity;
     }
     return result;
+}
+
+function changeCartItemQuantity(itemId) {
+    let form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    let itemSelect = document.getElementById("select" + itemId);
+    let selectedIndex = itemSelect.selectedIndex;
+    let itemQuantity = itemSelect.options[selectedIndex].value;
+    form.setAttribute('action', '/changeCartItemQuantity?quantity=' + itemQuantity + '&itemId=' + itemId);
+    form.style.display = 'hidden';
+    document.body.appendChild(form)
+    form.submit();
 }
 
 function generateItem(itemData) {
@@ -52,7 +68,7 @@ function generateItem(itemData) {
                 </p>
                 <p class="item_quantity">
                     Quantity: &nbsp;
-                    <select>
+                    <select id=select${itemData.itemId} onchange=changeCartItemQuantity(${itemData.itemId})>
                         <option value="1" ${itemData.quantity == 1 ? "selected" : ""}>1</option>
                         <option value="2" ${itemData.quantity == 2 ? "selected" : ""}>2</option>
                         <option value="3" ${itemData.quantity == 3 ? "selected" : ""}>3</option>
