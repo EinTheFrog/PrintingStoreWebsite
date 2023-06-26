@@ -32,7 +32,7 @@ exports.showCart = function (res) {
                         let cartItems = new Array(result.length);
                         for (let i = 0; i < result.length; i++) {
                             let itemId = result[i].item_id;
-                            let cartItem = { userId: userId, itemId: itemId, quantity: result[0].count }
+                            let cartItem = { userId: userId, itemId: itemId, quantity: result[i].count }
                             let sqlItem = `SELECT * FROM item WHERE id = ${itemId};`;
                             con.query(sqlItem, function(err, result) {
                                 if (err) throw err;
@@ -41,23 +41,29 @@ exports.showCart = function (res) {
                                 cartItem.name = item.name;
                                 cartItem.price = item.price;
                                 cartItem.imgSrc = item.img_src;
+
+                                cartItems[i] = cartItem;
+
+                                if (i == cartItems.length - 1) {
+                                    fs.readFile("./data/cart.json", function(err, data) {
+                                        if (err) throw err;
+            
+                                        let parsedData = JSON.parse(data);
+                                        parsedData.items = cartItems;
+                                        let jsonData = JSON.stringify(parsedData);
+                                        fs.writeFile("./data/cart.json", jsonData, function (err) {
+                                            if (err) throw err;
+                                            console.log("Written successfully");
+                            
+                                            con.end(function (err) {
+                                                if (err) throw err;
+                                                console.log("Database connection closed.");
+                                            });
+                                        });
+                                    });
+                                }
                             });
-                            cartItems[i] = cartItem;
                         }
-                        fs.readFile("./data/cart.json", function(err, data) {
-                            let parsedData = JSON.parse(data);
-                            parsedData.items = cartItems;
-                            let jsonData = JSON.stringify(parsedData);
-                            fs.writeFile("./data/cart.json", jsonData, function (err) {
-                                if (err) throw err;
-                                console.log("Written successfully");
-                
-                                con.end(function (err) {
-                                    if (err) throw err;
-                                    console.log("Database connection closed.");
-                                });
-                            });
-                        });
                     });
                 });
             });
@@ -85,6 +91,8 @@ exports.proceedChangeCartItemQuantity = function(req, res) {
         if (err) throw err;
         console.log("Connected!");
         fs.readFile("./data/account.json", function(err, data) {
+            if (err) throw err;
+
             let email = JSON.parse(data).account.email;
             let sqlUser = `SELECT id FROM store_user WHERE email = '${email}';`;
             con.query(sqlUser, function(err, result) {
