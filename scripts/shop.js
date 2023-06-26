@@ -25,9 +25,18 @@ function generateItems(itemDataList) {
     return result;
 }
 
+function addItemToCart(itemId) {
+    let form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', '/shopItemClick?itemId=' + itemId);
+    form.style.display = 'hidden';
+    document.body.appendChild(form)
+    form.submit();
+}
+
 function generateItem(itemData) {
     return `
-        <div class="item_container">
+        <div class="item_container" onclick="addItemToCart(${itemData.id})">
             <div class="item_card"> 
                 <img class="item_image" src="${itemData.imgSrc}" />
                 <div class="item_label">
