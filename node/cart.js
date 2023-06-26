@@ -68,3 +68,71 @@ exports.showCart = function (res) {
         return res.end();
     });
 };
+
+exports.proceedChangeCartItemQuantity = function(req, res) {
+    let itemId = req.query.itemId;
+    let quantity = req.query.quantity;
+
+    let con = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "MaxPain2001",
+        database: "printing_store"
+    });
+
+    con.connect(function (err) {
+        if (err) throw err;
+        console.log("Connected!");
+        fs.readFile("./data/account.json", function(err, data) {
+            let email = JSON.parse(data).account.email;
+            let sqlUser = `SELECT id FROM store_user WHERE email = '${email}';`;
+            con.query(sqlUser, function(err, result) {
+                if (err) throw err; 
+
+                let userId = result[0].id;
+                
+                let cartItem = { userId: userId, itemId: itemId, quantity: quantity }
+
+                let sqlItem = `SELECT * FROM cart_item WHERE id = ${itemId};`;
+                con.query(sqlItem, function(err, result) {
+                    if (err) throw err;
+
+                    let item = result[0];
+                    console.log(item);
+                    cartItem.name = item.name;
+                    cartItem.price = item.price;
+                    cartItem.imgSrc = item.img_src;
+
+                    let sqlUpdate = `UPDATE cart_item SET count = ${quantity} WHERE user_id = ${userId} AND item_id = ${itemId};`;
+                    con.query(sqlUpdate, function(err, result) {
+                        if (err) throw err;
+                        
+                        fs.readFile("./data/cart.json", function(err, data) {
+                            if (err) throw err;
+        
+                            let parsedData = JSON.parse(data);
+                            let itemIndex = 0;
+                            while (itemIndex < parsedData.items.length) {
+                                if (parsedData.items[itemIndex].userId == userId && parsedData.items[itemIndex].itemId == itemId) {
+                                    break;
+                                }
+                                itemIndex++;
+                            }
+                            parsedData.items[itemIndex] = cartItem;
+                            let jsonData = JSON.stringify(parsedData);
+                            fs.writeFile("./data/cart.json", jsonData, function (err) {
+                                if (err) throw err;
+                                console.log("Written successfully");
+                    
+                                con.end(function (err) {
+                                    if (err) throw err;
+                                    console.log("Database connection closed.");
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    });
+}

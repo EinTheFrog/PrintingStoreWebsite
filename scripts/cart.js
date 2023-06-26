@@ -46,6 +46,18 @@ function calculateTotalPrice(itemDataList) {
     return result;
 }
 
+function changeCartItemQuantity(itemId) {
+    let form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    let itemSelect = getElementById("select" + itemId);
+    let selectedIndex = itemSelect.selectedIndex;
+    let itemQuantity = itemSelect.options[selectedIndex].value;
+    form.setAttribute('action', '/changeCartItemQuantity?quantity=' + 1 + '&itemId=' + 1);
+    form.style.display = 'hidden';
+    document.body.appendChild(form)
+    form.submit();
+}
+
 function generateItem(itemData) {
     return `
         <div class="item_card"> 
@@ -56,7 +68,7 @@ function generateItem(itemData) {
                 </p>
                 <p class="item_quantity">
                     Quantity: &nbsp;
-                    <select>
+                    <select id=select${itemData.id} onchange=changeCartItemQuantity(${itemData.id})>
                         <option value="1" ${itemData.quantity == 1 ? "selected" : ""}>1</option>
                         <option value="2" ${itemData.quantity == 2 ? "selected" : ""}>2</option>
                         <option value="3" ${itemData.quantity == 3 ? "selected" : ""}>3</option>

@@ -67,6 +67,10 @@ app.post("/signUpClick", function(req, res) {
 app.post("/editProfileClick", function(req, res) {
     editProfileModule.proceedEditProfileClick(req, res);
 });
+app.post("/changeCartItemQuantity", function(req, res) {
+    console.log('ON CHANGE');
+    cartModule.proceedChangeCartItemQuantity(req, res);
+});
 
 app.use(express.static("./"));
 app.listen(8080);
