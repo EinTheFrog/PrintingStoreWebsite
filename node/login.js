@@ -18,23 +18,34 @@ exports.proceedloginClick = function(req, res) {
     const con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "root",
+    password: "MaxPain2001",
     database: "printing_store"
 })
 
     con.connect(function(err) {
         if (err) throw err;
-        console.log("Connected");
-
-        con.query("SELECT * FROM store_user WHERE email=" + userData.email + "AND user_password=" + userData.userPassword, function(err,results) {
+        console.log("Connected")
+        
+        con.query("SELECT * FROM store_user WHERE email=" + userData.email + "AND user_password=" + userData.userPassword, function(err, result) {
             if (err) throw err;
-            if (results.length > 0) {
-               res.redirect("/HomePage")
+            if (result.length > 0) {
+               res.redirect("/HomePage");
+               console.log("User exists")
+               const jsonData = JSON.stringify(result[0]);
+               fs.writeFile('account.json', jsonData, (err) => {
+                if (err) throw err;
+                else {
+                    console.log("User data written to JSON");
+                }
+               })
+
             } else {
-               res.redirect("/login")
+               res.redirect("/login");
+               console.log("User does not exist")
             }
            con.end();
            return res.end();
        });
    });
 }
+
