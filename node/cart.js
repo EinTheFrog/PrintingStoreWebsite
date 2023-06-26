@@ -70,6 +70,7 @@ exports.showCart = function (res) {
 };
 
 exports.proceedChangeCartItemQuantity = function(req, res) {
+    console.log(req.query);
     let itemId = req.query.itemId;
     let quantity = req.query.quantity;
 
@@ -106,30 +107,11 @@ exports.proceedChangeCartItemQuantity = function(req, res) {
                     con.query(sqlUpdate, function(err, result) {
                         if (err) throw err;
                         
-                        fs.readFile("./data/cart.json", function(err, data) {
+                        con.end(function (err) {
                             if (err) throw err;
-        
-                            let parsedData = JSON.parse(data);
-                            let itemIndex = 0;
-                            while (itemIndex < parsedData.items.length) {
-                                if (parsedData.items[itemIndex].userId == userId && parsedData.items[itemIndex].itemId == itemId) {
-                                    break;
-                                }
-                                itemIndex++;
-                            }
-                            parsedData.items[itemIndex] = cartItem;
-                            let jsonData = JSON.stringify(parsedData);
-                            fs.writeFile("./data/cart.json", jsonData, function (err) {
-                                if (err) throw err;
-                                console.log("Written successfully");
-                    
-                                con.end(function (err) {
-                                    if (err) throw err;
-                                });
-                                res.redirect("/cart")
-                                return res.end();
-                            });
                         });
+                        res.redirect("/cart")
+                        return res.end();
                     });
                 });
             });
