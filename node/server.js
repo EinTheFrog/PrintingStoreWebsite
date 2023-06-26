@@ -71,6 +71,10 @@ app.post("/changeCartItemQuantity", function(req, res) {
     console.log('ON CHANGE');
     cartModule.proceedChangeCartItemQuantity(req, res);
 });
+app.post("/shopItemClick", function(req, res) {
+    console.log("SHOP ITEM CLICK");
+    shopModule.proceedShopItemClick(req, res);
+});
 
 app.use(express.static("./"));
 app.listen(8080);
