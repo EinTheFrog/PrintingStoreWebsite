@@ -93,12 +93,11 @@ exports.proceedChangeCartItemQuantity = function(req, res) {
                 
                 let cartItem = { userId: userId, itemId: itemId, quantity: quantity }
 
-                let sqlItem = `SELECT * FROM cart_item WHERE id = ${itemId};`;
+                let sqlItem = `SELECT * FROM item WHERE id = ${itemId};`;
                 con.query(sqlItem, function(err, result) {
                     if (err) throw err;
 
                     let item = result[0];
-                    console.log(item);
                     cartItem.name = item.name;
                     cartItem.price = item.price;
                     cartItem.imgSrc = item.img_src;
@@ -126,8 +125,9 @@ exports.proceedChangeCartItemQuantity = function(req, res) {
                     
                                 con.end(function (err) {
                                     if (err) throw err;
-                                    console.log("Database connection closed.");
                                 });
+                                res.redirect("/cart")
+                                return res.end();
                             });
                         });
                     });
